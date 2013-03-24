@@ -1,0 +1,16 @@
+<% provide(:title, @article.title) %>
+<div class="page-header">
+  <h4><%= @article.title %></h4>
+  <span class="timestamp">
+    Published on <%= (@article.created_at).strftime "%B %d, %Y" %>
+    <div class="pull-right">
+      <%= raw join_tags(@article) %>
+    </div>
+  </span>
+</div>
+<p class="lead"><%= @article.content %></p>
+<div class="span8">
+  <div id = "disqus_thread">
+    <%= disqus_thread.html_safe %>
+  </div>
+</div>

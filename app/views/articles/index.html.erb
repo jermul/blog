@@ -1,0 +1,9 @@
+<div class="center">
+  <% if current_user %>
+    <%= link_to 'New blog article', new_article_path, class: "btn btn-large" %>
+  <% end %>
+</div><br />
+
+<%= render @articles %>
+<%= page_entries_info @articles %>
+<%= will_paginate @articles, page_links: false %>

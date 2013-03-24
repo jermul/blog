@@ -1,4 +1,14 @@
 Blog::Application.routes.draw do
+
+  resources :articles
+  resources :users
+  resources :sessions, only: [:new, :create, :destroy]
+
+  match '/login',     to: 'sessions#new'
+  match '/logout',    to: 'sessions#destroy'
+  get 'tags/:tag',    to: 'articles#index', as: :tag
+  root                to: 'articles#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,40 @@
+<h2> Search </h2>
+<div class="input-append">
+  <%= form_tag articles_path, method: 'get' do %>
+    <%= text_field_tag :search, params[:search], class: "input-large", 
+    				   							id: "appendedInputButtons", 
+    				   							placeholder: "Search for a blog post" %>
+    <button class="btn" type="btn">Go!</button>
+  <% end %>
+</div>
+<h2>About Little Okins</h2>
+<p>
+  <small>Little Okins are handmade heartfelt notes, 
+    carefully and cleverly enclosed in a painted eggshell 
+    that will reveal your personal message once cracked open.</small>
+</p>
+
+<h2>Vote</h2> 
+<p>what Little Okin theme would you like to see next?</p>
+<label class="radio">
+  <input type="radio" name="optionsRadios" id="optionRadios1" value="option1" checked> 
+  Thanksgiving
+</label>
+<label class="radio">
+  <input type="radio" name="optionsRadios" id="optionRadios2" value="option2"> 
+  Easter
+</label>
+<label class="radio">
+  <input type="radio" name="optionsRadios" id="optionRadios3" value="option3"> 
+  Birthday
+</label>
+<br />
+<button type="submit" class="btn btn-mini">Submit</button>
+
+<h2>Archives</h2>
+<ul>
+  <li>March</li>
+  <li>February</li>
+  <li>January</li>
+  <li>December</li>
+</ul>
