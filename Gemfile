@@ -10,6 +10,7 @@ gem 'jquery-rails', '2.0.2'
 gem 'pg', '0.12.2'
 gem 'acts-as-taggable-on', '~> 2.3.1'
 gem 'disqus'
+gem 'bourbon'
 
 group :development do
   gem 'better_errors'

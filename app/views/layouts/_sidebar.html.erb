@@ -1,9 +1,9 @@
 <h2> Search </h2>
 <div class="input-append">
-  <%= form_tag articles_path, method: 'get' do %>
-    <%= text_field_tag :search, params[:search], class: "input-large", 
+  <%= form_tag articles_path, method: :get do %>
+    <%= text_field_tag :query, params[:query], class: "input-large", 
     				   							id: "appendedInputButtons", 
-    				   							placeholder: "Search for a blog post" %>
+    				   							placeholder: "Search for a blog article" %>
     <button class="btn" type="btn">Go!</button>
   <% end %>
 </div>
@@ -32,9 +32,3 @@
 <button type="submit" class="btn btn-mini">Submit</button>
 
 <h2>Archives</h2>
-<ul>
-  <li>March</li>
-  <li>February</li>
-  <li>January</li>
-  <li>December</li>
-</ul>

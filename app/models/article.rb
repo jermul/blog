@@ -5,8 +5,11 @@ class Article < ActiveRecord::Base
   validates :title,   presence: true, uniqueness: true
   validates :content, presence: true
 
-  def self.search(search, page)
-    paginate per_page: 6, page: page, order: "created_at DESC",
-             conditions: ['title ILIKE? OR content ILIKE?', "%#{search}%", "%#{search}%"]
+  def self.text_search(query)
+    if query.present?
+      where("title @@ :q or content @@ :q", q: query)
+    else
+      scoped
+    end
   end
 end

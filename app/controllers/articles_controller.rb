@@ -5,7 +5,9 @@ class ArticlesController < ApplicationController
     if params[:tag]
       @articles = Article.tagged_with(params[:tag]).paginate(page: params[:page])
     else
-      @articles = Article.search(params[:search], params[:page])
+      @articles = Article.text_search(params[:query]).page(params[:page]).per_page(5)
+      @articles_by_month = Article.find(:all, order: "created_at DESC").group_by {
+                                         |article| article.created_at.strftime("%B %Y") } #for later use in article archiving
     end
   end
 

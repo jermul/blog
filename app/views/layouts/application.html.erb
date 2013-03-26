@@ -10,8 +10,18 @@
   <body>
   	<%= render 'layouts/header' %>
   	<div class="container">
-      <div class="center hero-unit">
-        <%= image_tag("okins.jpg", alt: "Little Okins")%>
+      <div class="header">
+        <div id="myCarousel" class="carousel slide">
+          <!-- Carousel items -->
+          <div class="carousel-inner">
+            <div class="active item"><%= image_tag("okins.jpg", alt: "Little Okins")%></div>
+            <div class="item"><%= image_tag("okins1.jpg", alt: "Little Okins1")%></div>
+            <div class="item"><%= image_tag("okins2.jpg", alt: "Little Okins2")%></div>
+          </div>
+          <!-- Carousel nav -->
+          <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+          <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+        </div>
       </div>
       <div class="center">
         <%= render 'layouts/notice' %> 
